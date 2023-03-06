@@ -11,9 +11,11 @@ All raw, downloaded CDC data are stored in this project's **/data/** folder.
 library(here)
 library(dplyr)
 library(vroom)
+library(tidyr)
+library(purrr)
 ```
 
-# Expanded Natality data (2016 - 2019)
+# Expanded Natality data (2016 - 2021)
 
 Here are the latest [technical notes](https://www.cdc.gov/nchs/nvss/vsrr/natality-technical-notes.htm) on CDC's Natality data and the [CDC data dictionary](https://wonder.cdc.gov/wonder/help/Natality-expanded.html#)
 
@@ -29,19 +31,23 @@ This dataset is inspired by the Maternal, Infant, and Child Health objective ide
 
 -   **vertex**: not breech / head is facing in a downward position for delivery.
 
-We'll first get national totals for low-risk cesarean births by selecting the following criteria in CDC Wonder:
+We'll first get national totals for low-risk cesarean births by selecting the following criteria in CDC Wonder's [Natality for 2016 - 2021 (expanded)](https://wonder.cdc.gov/natality-expanded-current.html) data collection:
 
-In section 10. "Select delivery characteristics"
+In section 1. "Organize table layout"
 
--   **Fetal Presentation**: Cephalic
-
--   **Final Route and Delivery Method**: Cesarean
-
--   **Delivery Method Expanded**: Primary C-section; Repeat C-section; C-section (unknown if previous c-section)
+-   **Group Results by**: Delivery characteristics - Year
 
 In section 5. "Select pregnancy history and prenatal care characteristics"
 
 -   **Live Birth Order**: 1
+
+In section 10. "Select delivery characteristics"
+
+-   **Year**: All Years
+
+-   **Fetal Presentation**: Cephalic
+
+-   **Delivery Method Expanded**: Primary C-section; Repeat C-section; C-section (unknown if previous c-section)
 
 In section 12. "Select infant characteristics"
 
@@ -51,7 +57,7 @@ In section 12. "Select infant characteristics"
 
 This yields the **US Natality, 2016-2021 expanded_low-risk cesarean.txt** data file stored in **/data/**.
 
-```{r echo=FALSE}
+```{r low-risk-cesareans}
 low_risk_cesarean_totals <- 
   vroom(
     here("data", "US Natality, 2016-2021 expanded_low-risk cesarean.txt"),
@@ -69,15 +75,19 @@ low_risk_cesarean_totals %>%
 
 These match the low-risk cesarean totals reported in the [Jan. 2023 National Vital Statistics Report](https://www.cdc.gov/nchs/data/nvsr/nvsr72/nvsr72-01.pdf). Next, we'll get total low-risk births so that we can calculate the rate of low-risk cesareans among these. This data is obtained by removing the filters for delivery method:
 
--   **Fetal Presentation**: Cephalic
-
 -   **Live Birth Order**: 1
+
+-   **Year**: All Years
+
+-   **Fetal Presentation**: Cephalic
 
 -   **OE Gestational Age Recode 11**: 37-38 weeks; 39 weeks; 40 weeks; 41 weeks; 42 weeks or more
 
 -   **Plurality**: Single
 
-```{r}
+The output of this is the **US Natality, 2016-2021 expanded_low-risk births.txt** data file stored in **/data/**.
+
+```{r low-risk-all-deliveries}
 low_risk_all_deliveries_totals <- 
   vroom(
     here("data", "US Natality, 2016-2021 expanded_low-risk births.txt"),
@@ -93,7 +103,7 @@ low_risk_all_deliveries_totals %>%
   arrange(desc(Year))
 ```
 
-We can then join these into a single dataset with totals and calculate low-risk rates.
+We can then join these two into a single dataset and calculate the national low-risk rates from 2016 to 2021.
 
 ```{r}
 df_low_risk_births <- 
@@ -112,4 +122,71 @@ df_low_risk_births %>%
   arrange(desc(Year))
 ```
 
-For the latest rates, visit the [NCHS - VSRR Quarterly provisional estimates for selected birth indicators](https://data.cdc.gov/d/76vv-a7x8) dataset on socrata. This does not include totals but has cesarean and low-risk cesarean birth rates at the national level by race/ethnicity.
+These match the low-risk cesarean percentages reported in Table 17, page 36 of the [Jan. 2023 National Vital Statistics Report](https://www.cdc.gov/nchs/data/nvsr/nvsr72/nvsr72-01.pdf).
+
+For the latest rates, visit the [NCHS - VSRR Quarterly provisional estimates for selected birth indicators](https://data.cdc.gov/d/76vv-a7x8) dataset on Socrata. This does not include totals but has cesarean and low-risk cesarean birth rates at the national level by race/ethnicity.
+
+## State-level low-risk deliveries
+
+In CDC Wonder use the same criteria for low-risk cesarean births and low-risk births defined above, and add on an additional variable to Section 1. "Organize table layout" to
+
+-   \***Group Results by**: Year **And By** State of Residence
+
+Send this result and you will have the totals for all 50 US states and the District of Columbia from 2016 to 2021. The output files for these two CDC Wonder queries are the **State-level Natality, 2016-2021 expanded_low-risk cesarean.txt** and the **State-level Natality, 2016-2021 expanded_low-risk births.txt** data files stored in **/data/**.
+
+```{r state-low-risk-totals}
+state_filenames <- c(
+  here("data", "State-level Natality, 2016-2021 expanded_low-risk births.txt"),
+  here("data", "State-level Natality, 2016-2021 expanded_low-risk cesarean.txt")
+)
+
+datasets <- c(
+  "All low-risk births",
+  "Low-risk cesarean births"
+)
+
+low_risk_deliveries_by_state <-
+  map2_dfr(
+    state_filenames, datasets,
+    ~ vroom(
+        file = .x,
+        n_max = 306,
+        col_types = cols("c", "i", "i", "c", "i", "i")
+      ) %>% 
+      drop_na(`State of Residence`) %>% 
+      select(-Notes, -`Year Code`) %>% 
+      mutate(type = .y)
+  ) %>% 
+  pivot_wider(
+    names_from = type,
+    values_from = Births
+  ) %>% 
+  rename(FIPS = `State of Residence Code`, State = `State of Residence`) %>% 
+  mutate(low_risk_cesarean_rate = `Low-risk cesarean births`/`All low-risk births`)
+
+low_risk_deliveries_by_state
+```
+
+Here are the "Top 5 states" with the lowest low-risk cesarean rates from 2016 to 2021.
+
+```{r}
+low_risk_deliveries_by_state %>% 
+  arrange(desc(Year), low_risk_cesarean_rate) %>% 
+  group_by(Year) %>% 
+  slice(1:5) %>% 
+  arrange(desc(Year))
+```
+
+## Oregon's low-risk birth results
+
+```{r}
+low_risk_deliveries_by_state %>% 
+  filter(State == "Oregon") %>% 
+  mutate(
+    low_risk_cesarean_rate = scales::percent(low_risk_cesarean_rate, accuracy = .1),
+    `All low-risk births` = prettyNum(`All low-risk births`, big.mark = ","),
+    `Low-risk cesarean births` = prettyNum(`Low-risk cesarean births`, big.mark = ",")
+  ) %>% 
+  arrange(desc(Year)) %>% 
+  select(-FIPS)
+```
