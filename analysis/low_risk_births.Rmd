@@ -1,0 +1,58 @@
+
+Low Risk Births
+
+-----
+
+[Description]
+
+-----
+
+```{r setup}
+library(here)
+library(dplyr)
+library(vroom)
+library(scales)
+library(tidyr)
+library(purrr)
+
+sapply(list.files(here::here("src"), full.names = TRUE), source)
+
+#load data
+df_low_risk_births_by_state <- readRDS(here("save", "state_low_risk_births_2016_to_2021.RDS"))
+```
+
+Here are states with low-risk cesarean rates averaging strictly below the Healthy People 2030 target of 23.6%.
+
+```{r}
+df_low_risk_births_by_state %>% 
+  group_by(State) %>% 
+  summarise(average_low_risk_cesarean_rate = sum(`Low-risk cesarean births`)/sum(`All low-risk births`)) %>% 
+  arrange(average_low_risk_cesarean_rate) %>% 
+  filter(average_low_risk_cesarean_rate < .236)
+```
+
+
+And here are the states with low-risk cesarean rates averaging over 24%
+
+```{r}
+df_low_risk_births_by_state %>% 
+  group_by(State) %>% 
+  summarise(average_low_risk_cesarean_rate = sum(`Low-risk cesarean births`)/sum(`All low-risk births`)) %>% 
+  arrange(average_low_risk_cesarean_rate) %>% 
+  filter(average_low_risk_cesarean_rate >= .24)
+```
+
+
+## Oregon's low-risk birth results
+
+```{r}
+df_low_risk_births_by_state %>% 
+  filter(State == "Oregon") %>% 
+  mutate(
+    low_risk_cesarean_rate = scales::percent(low_risk_cesarean_rate, accuracy = .1),
+    `All low-risk births` = prettyNum(`All low-risk births`, big.mark = ","),
+    `Low-risk cesarean births` = prettyNum(`Low-risk cesarean births`, big.mark = ",")
+  ) %>% 
+  arrange(desc(Year)) %>% 
+  select(-FIPS)
+```
