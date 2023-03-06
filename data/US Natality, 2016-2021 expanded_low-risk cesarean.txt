@@ -1,0 +1,34 @@
+"Notes"	"Year"	"Year Code"	Births
+	"2016"	"2016"	329614
+	"2017"	"2017"	325086
+	"2018"	"2018"	319022
+	"2019"	"2019"	314016
+	"2020"	"2020"	310303
+	"2021"	"2021"	316349
+"Total"			1914390
+"---"
+"Dataset: Natality, 2016-2021 expanded"
+"Query Parameters:"
+"Delivery Method Expanded: Primary C-section; Repeat C-section; C-section (unknown if previous c-section)"
+"Fetal Presentation: Cephalic"
+"Final Route and Delivery Method: Cesarean"
+"Live Birth Order: 1"
+"OE Gestational Age Recode 11: 37-38 weeks; 39 weeks; 40 weeks; 41 weeks; 42 weeks or more"
+"Plurality: Single"
+"Group By: Year"
+"Show Totals: True"
+"Show Zero Values: True"
+"Show Suppressed: True"
+"Calculate Rates Per: 1,000"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/Natality-expanded.html for more information."
+"---"
+"Query Date: Mar 5, 2023 11:10:10 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
+"System, Natality on CDC WONDER Online Database. Data are from the Natality Records 2016-2021, as compiled from data provided by"
+"the 57 vital statistics jurisdictions through the Vital Statistics Cooperative Program. Accessed at"
+"http://wonder.cdc.gov/natality-expanded-current.html on Mar 5, 2023 11:10:10 PM"
+"---"
+Caveats:
+"1. Each birth record represents one liveborn infant."

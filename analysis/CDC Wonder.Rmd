@@ -1,0 +1,115 @@
+---
+title: Extracting CDC Data
+output: github_document
+---
+
+This notebook documents natality data downloaded from [CDC Wonder](https://wonder.cdc.gov/natality.html){.uri} and [data.cdc.gov](https://data.cdc.gov/).
+
+All raw, downloaded CDC data are stored in this project's **/data/** folder.
+
+```{r setup, message = FALSE, warning = FALSE}
+library(here)
+library(dplyr)
+library(vroom)
+```
+
+# Expanded Natality data (2016 - 2019)
+
+Here are the latest [technical notes](https://www.cdc.gov/nchs/nvss/vsrr/natality-technical-notes.htm) on CDC's Natality data and the [CDC data dictionary](https://wonder.cdc.gov/wonder/help/Natality-expanded.html#)
+
+## Low-risk deliveries
+
+This dataset is inspired by the Maternal, Infant, and Child Health objective identified by [Healthy People 2030](https://health.gov/healthypeople) to *reduce cesarean births among low-risk women with no prior births* to a target of 23.6% nationwide. A low-risk birth is [defined](https://health.gov/healthypeople/objectives-and-data/browse-objectives/pregnancy-and-childbirth/reduce-cesarean-births-among-low-risk-women-no-prior-births-mich-06/data-methodology) as
+
+-   **nulliparous**: first birth,
+
+-   **singleton**: a single fetus (not multiple),
+
+-   **term**: at least 37 weeks of gestation based on obstetric estimate of gestation at delivery, and
+
+-   **vertex**: not breech / head is facing in a downward position for delivery.
+
+We'll first get national totals for low-risk cesarean births by selecting the following criteria in CDC Wonder:
+
+In section 10. "Select delivery characteristics"
+
+-   **Fetal Presentation**: Cephalic
+
+-   **Final Route and Delivery Method**: Cesarean
+
+-   **Delivery Method Expanded**: Primary C-section; Repeat C-section; C-section (unknown if previous c-section)
+
+In section 5. "Select pregnancy history and prenatal care characteristics"
+
+-   **Live Birth Order**: 1
+
+In section 12. "Select infant characteristics"
+
+-   **OE Gestational Age Recode 11**: 37-38 weeks; 39 weeks; 40 weeks; 41 weeks; 42 weeks or more
+
+-   **Plurality**: Single
+
+This yields the **US Natality, 2016-2021 expanded_low-risk cesarean.txt** data file stored in **/data/**.
+
+```{r echo=FALSE}
+low_risk_cesarean_totals <- 
+  vroom(
+    here("data", "US Natality, 2016-2021 expanded_low-risk cesarean.txt"),
+    n_max = 6,
+    col_types = cols("c", "i", "i", "i"),
+    delim = "\t"
+  )  %>% 
+  select(Year, Cesarean_births = Births) %>%  
+  as.data.frame()
+
+low_risk_cesarean_totals %>%
+  mutate(Cesarean_births = prettyNum(Cesarean_births, big.mark = ",")) %>% 
+  arrange(desc(Year))
+```
+
+These match the low-risk cesarean totals reported in the [Jan. 2023 National Vital Statistics Report](https://www.cdc.gov/nchs/data/nvsr/nvsr72/nvsr72-01.pdf). Next, we'll get total low-risk births so that we can calculate the rate of low-risk cesareans among these. This data is obtained by removing the filters for delivery method:
+
+-   **Fetal Presentation**: Cephalic
+
+-   **Live Birth Order**: 1
+
+-   **OE Gestational Age Recode 11**: 37-38 weeks; 39 weeks; 40 weeks; 41 weeks; 42 weeks or more
+
+-   **Plurality**: Single
+
+```{r}
+low_risk_all_deliveries_totals <- 
+  vroom(
+    here("data", "US Natality, 2016-2021 expanded_low-risk births.txt"),
+    n_max = 6,
+    col_types = cols("c", "i", "i", "i"),
+    delim = "\t"
+  ) %>% 
+  select(Year, Births) %>%  
+  as.data.frame()
+
+low_risk_all_deliveries_totals %>%
+  mutate(Births = prettyNum(Births, big.mark = ",")) %>% 
+  arrange(desc(Year))
+```
+
+We can then join these into a single dataset with totals and calculate low-risk rates.
+
+```{r}
+df_low_risk_births <- 
+  left_join(
+    low_risk_all_deliveries_totals, 
+    low_risk_cesarean_totals, 
+    by = "Year"
+  )
+
+df_low_risk_births %>% 
+  mutate(
+    low_risk_cesarean_rate = scales::percent(Cesarean_births/Births, accuracy = .1),
+    Births = prettyNum(Births, big.mark = ","),
+    Cesarean_births = prettyNum(Cesarean_births, big.mark = ",")
+  ) %>% 
+  arrange(desc(Year))
+```
+
+For the latest rates, visit the [NCHS - VSRR Quarterly provisional estimates for selected birth indicators](https://data.cdc.gov/d/76vv-a7x8) dataset on socrata. This does not include totals but has cesarean and low-risk cesarean birth rates at the national level by race/ethnicity.

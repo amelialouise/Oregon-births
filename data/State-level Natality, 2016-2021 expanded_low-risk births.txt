@@ -1,0 +1,331 @@
+"Notes"	"Year"	"Year Code"	"State of Residence"	"State of Residence Code"	Births
+	"2016"	"2016"	"Alabama"	"01"	19029
+	"2016"	"2016"	"Alaska"	"02"	3437
+	"2016"	"2016"	"Arizona"	"04"	25824
+	"2016"	"2016"	"Arkansas"	"05"	11788
+	"2016"	"2016"	"California"	"06"	162397
+	"2016"	"2016"	"Colorado"	"08"	22603
+	"2016"	"2016"	"Connecticut"	"09"	12425
+	"2016"	"2016"	"Delaware"	"10"	3627
+	"2016"	"2016"	"District of Columbia"	"11"	3882
+	"2016"	"2016"	"Florida"	"12"	76403
+	"2016"	"2016"	"Georgia"	"13"	41118
+	"2016"	"2016"	"Hawaii"	"15"	5671
+	"2016"	"2016"	"Idaho"	"16"	6473
+	"2016"	"2016"	"Illinois"	"17"	49207
+	"2016"	"2016"	"Indiana"	"18"	26026
+	"2016"	"2016"	"Iowa"	"19"	11922
+	"2016"	"2016"	"Kansas"	"20"	11515
+	"2016"	"2016"	"Kentucky"	"21"	17751
+	"2016"	"2016"	"Louisiana"	"22"	19332
+	"2016"	"2016"	"Maine"	"23"	4657
+	"2016"	"2016"	"Maryland"	"24"	24380
+	"2016"	"2016"	"Massachusetts"	"25"	25752
+	"2016"	"2016"	"Michigan"	"26"	35368
+	"2016"	"2016"	"Minnesota"	"27"	21359
+	"2016"	"2016"	"Mississippi"	"28"	11423
+	"2016"	"2016"	"Missouri"	"29"	23627
+	"2016"	"2016"	"Montana"	"30"	3919
+	"2016"	"2016"	"Nebraska"	"31"	7406
+	"2016"	"2016"	"Nevada"	"32"	11551
+	"2016"	"2016"	"New Hampshire"	"33"	4549
+	"2016"	"2016"	"New Jersey"	"34"	34721
+	"2016"	"2016"	"New Mexico"	"35"	7509
+	"2016"	"2016"	"New York"	"36"	82034
+	"2016"	"2016"	"North Carolina"	"37"	40743
+	"2016"	"2016"	"North Dakota"	"38"	3457
+	"2016"	"2016"	"Ohio"	"39"	43744
+	"2016"	"2016"	"Oklahoma"	"40"	15959
+	"2016"	"2016"	"Oregon"	"41"	15506
+	"2016"	"2016"	"Pennsylvania"	"42"	46300
+	"2016"	"2016"	"Rhode Island"	"44"	3653
+	"2016"	"2016"	"South Carolina"	"45"	18563
+	"2016"	"2016"	"South Dakota"	"46"	3531
+	"2016"	"2016"	"Tennessee"	"47"	24728
+	"2016"	"2016"	"Texas"	"48"	126627
+	"2016"	"2016"	"Utah"	"49"	13986
+	"2016"	"2016"	"Vermont"	"50"	2074
+	"2016"	"2016"	"Virginia"	"51"	33122
+	"2016"	"2016"	"Washington"	"53"	31279
+	"2016"	"2016"	"West Virginia"	"54"	6116
+	"2016"	"2016"	"Wisconsin"	"55"	20358
+	"2016"	"2016"	"Wyoming"	"56"	2176
+	"2017"	"2017"	"Alabama"	"01"	19145
+	"2017"	"2017"	"Alaska"	"02"	3185
+	"2017"	"2017"	"Arizona"	"04"	24995
+	"2017"	"2017"	"Arkansas"	"05"	10958
+	"2017"	"2017"	"California"	"06"	157633
+	"2017"	"2017"	"Colorado"	"08"	22083
+	"2017"	"2017"	"Connecticut"	"09"	12304
+	"2017"	"2017"	"Delaware"	"10"	3511
+	"2017"	"2017"	"District of Columbia"	"11"	3732
+	"2017"	"2017"	"Florida"	"12"	76009
+	"2017"	"2017"	"Georgia"	"13"	41419
+	"2017"	"2017"	"Hawaii"	"15"	5683
+	"2017"	"2017"	"Idaho"	"16"	6613
+	"2017"	"2017"	"Illinois"	"17"	47455
+	"2017"	"2017"	"Indiana"	"18"	25361
+	"2017"	"2017"	"Iowa"	"19"	11537
+	"2017"	"2017"	"Kansas"	"20"	11089
+	"2017"	"2017"	"Kentucky"	"21"	17328
+	"2017"	"2017"	"Louisiana"	"22"	18810
+	"2017"	"2017"	"Maine"	"23"	4434
+	"2017"	"2017"	"Maryland"	"24"	23573
+	"2017"	"2017"	"Massachusetts"	"25"	26102
+	"2017"	"2017"	"Michigan"	"26"	34863
+	"2017"	"2017"	"Minnesota"	"27"	20941
+	"2017"	"2017"	"Mississippi"	"28"	11263
+	"2017"	"2017"	"Missouri"	"29"	22541
+	"2017"	"2017"	"Montana"	"30"	3817
+	"2017"	"2017"	"Nebraska"	"31"	7208
+	"2017"	"2017"	"Nevada"	"32"	11439
+	"2017"	"2017"	"New Hampshire"	"33"	4387
+	"2017"	"2017"	"New Jersey"	"34"	34450
+	"2017"	"2017"	"New Mexico"	"35"	7128
+	"2017"	"2017"	"New York"	"36"	79359
+	"2017"	"2017"	"North Carolina"	"37"	40676
+	"2017"	"2017"	"North Dakota"	"38"	3150
+	"2017"	"2017"	"Ohio"	"39"	43158
+	"2017"	"2017"	"Oklahoma"	"40"	15191
+	"2017"	"2017"	"Oregon"	"41"	14653
+	"2017"	"2017"	"Pennsylvania"	"42"	45691
+	"2017"	"2017"	"Rhode Island"	"44"	3690
+	"2017"	"2017"	"South Carolina"	"45"	18160
+	"2017"	"2017"	"South Dakota"	"46"	3382
+	"2017"	"2017"	"Tennessee"	"47"	26299
+	"2017"	"2017"	"Texas"	"48"	119980
+	"2017"	"2017"	"Utah"	"49"	13943
+	"2017"	"2017"	"Vermont"	"50"	2088
+	"2017"	"2017"	"Virginia"	"51"	32827
+	"2017"	"2017"	"Washington"	"53"	29958
+	"2017"	"2017"	"West Virginia"	"54"	5989
+	"2017"	"2017"	"Wisconsin"	"55"	19536
+	"2017"	"2017"	"Wyoming"	"56"	2149
+	"2018"	"2018"	"Alabama"	"01"	18728
+	"2018"	"2018"	"Alaska"	"02"	3052
+	"2018"	"2018"	"Arizona"	"04"	25177
+	"2018"	"2018"	"Arkansas"	"05"	11335
+	"2018"	"2018"	"California"	"06"	153579
+	"2018"	"2018"	"Colorado"	"08"	21641
+	"2018"	"2018"	"Connecticut"	"09"	12002
+	"2018"	"2018"	"Delaware"	"10"	3333
+	"2018"	"2018"	"District of Columbia"	"11"	3650
+	"2018"	"2018"	"Florida"	"12"	74451
+	"2018"	"2018"	"Georgia"	"13"	41221
+	"2018"	"2018"	"Hawaii"	"15"	5267
+	"2018"	"2018"	"Idaho"	"16"	6386
+	"2018"	"2018"	"Illinois"	"17"	45850
+	"2018"	"2018"	"Indiana"	"18"	25010
+	"2018"	"2018"	"Iowa"	"19"	11154
+	"2018"	"2018"	"Kansas"	"20"	11130
+	"2018"	"2018"	"Kentucky"	"21"	17109
+	"2018"	"2018"	"Louisiana"	"22"	18163
+	"2018"	"2018"	"Maine"	"23"	4442
+	"2018"	"2018"	"Maryland"	"24"	23333
+	"2018"	"2018"	"Massachusetts"	"25"	25876
+	"2018"	"2018"	"Michigan"	"26"	34850
+	"2018"	"2018"	"Minnesota"	"27"	20260
+	"2018"	"2018"	"Mississippi"	"28"	10895
+	"2018"	"2018"	"Missouri"	"29"	22704
+	"2018"	"2018"	"Montana"	"30"	3603
+	"2018"	"2018"	"Nebraska"	"31"	7175
+	"2018"	"2018"	"Nevada"	"32"	11253
+	"2018"	"2018"	"New Hampshire"	"33"	4354
+	"2018"	"2018"	"New Jersey"	"34"	34388
+	"2018"	"2018"	"New Mexico"	"35"	7130
+	"2018"	"2018"	"New York"	"36"	78268
+	"2018"	"2018"	"North Carolina"	"37"	40201
+	"2018"	"2018"	"North Dakota"	"38"	3167
+	"2018"	"2018"	"Ohio"	"39"	42221
+	"2018"	"2018"	"Oklahoma"	"40"	14889
+	"2018"	"2018"	"Oregon"	"41"	14432
+	"2018"	"2018"	"Pennsylvania"	"42"	44598
+	"2018"	"2018"	"Rhode Island"	"44"	3556
+	"2018"	"2018"	"South Carolina"	"45"	18488
+	"2018"	"2018"	"South Dakota"	"46"	3359
+	"2018"	"2018"	"Tennessee"	"47"	26168
+	"2018"	"2018"	"Texas"	"48"	118571
+	"2018"	"2018"	"Utah"	"49"	13886
+	"2018"	"2018"	"Vermont"	"50"	1880
+	"2018"	"2018"	"Virginia"	"51"	33231
+	"2018"	"2018"	"Washington"	"53"	28864
+	"2018"	"2018"	"West Virginia"	"54"	5848
+	"2018"	"2018"	"Wisconsin"	"55"	19145
+	"2018"	"2018"	"Wyoming"	"56"	2059
+	"2019"	"2019"	"Alabama"	"01"	18655
+	"2019"	"2019"	"Alaska"	"02"	2967
+	"2019"	"2019"	"Arizona"	"04"	24946
+	"2019"	"2019"	"Arkansas"	"05"	11159
+	"2019"	"2019"	"California"	"06"	152871
+	"2019"	"2019"	"Colorado"	"08"	21908
+	"2019"	"2019"	"Connecticut"	"09"	12030
+	"2019"	"2019"	"Delaware"	"10"	3459
+	"2019"	"2019"	"District of Columbia"	"11"	3447
+	"2019"	"2019"	"Florida"	"12"	73420
+	"2019"	"2019"	"Georgia"	"13"	41632
+	"2019"	"2019"	"Hawaii"	"15"	5276
+	"2019"	"2019"	"Idaho"	"16"	6681
+	"2019"	"2019"	"Illinois"	"17"	44952
+	"2019"	"2019"	"Indiana"	"18"	25081
+	"2019"	"2019"	"Iowa"	"19"	11186
+	"2019"	"2019"	"Kansas"	"20"	10718
+	"2019"	"2019"	"Kentucky"	"21"	16743
+	"2019"	"2019"	"Louisiana"	"22"	18041
+	"2019"	"2019"	"Maine"	"23"	4119
+	"2019"	"2019"	"Maryland"	"24"	23216
+	"2019"	"2019"	"Massachusetts"	"25"	25983
+	"2019"	"2019"	"Michigan"	"26"	34120
+	"2019"	"2019"	"Minnesota"	"27"	19886
+	"2019"	"2019"	"Mississippi"	"28"	10948
+	"2019"	"2019"	"Missouri"	"29"	22511
+	"2019"	"2019"	"Montana"	"30"	3561
+	"2019"	"2019"	"Nebraska"	"31"	7138
+	"2019"	"2019"	"Nevada"	"32"	11284
+	"2019"	"2019"	"New Hampshire"	"33"	4209
+	"2019"	"2019"	"New Jersey"	"34"	34031
+	"2019"	"2019"	"New Mexico"	"35"	7180
+	"2019"	"2019"	"New York"	"36"	77107
+	"2019"	"2019"	"North Carolina"	"37"	40156
+	"2019"	"2019"	"North Dakota"	"38"	3137
+	"2019"	"2019"	"Ohio"	"39"	42210
+	"2019"	"2019"	"Oklahoma"	"40"	15010
+	"2019"	"2019"	"Oregon"	"41"	14329
+	"2019"	"2019"	"Pennsylvania"	"42"	43963
+	"2019"	"2019"	"Rhode Island"	"44"	3521
+	"2019"	"2019"	"South Carolina"	"45"	18586
+	"2019"	"2019"	"South Dakota"	"46"	3274
+	"2019"	"2019"	"Tennessee"	"47"	26245
+	"2019"	"2019"	"Texas"	"48"	121391
+	"2019"	"2019"	"Utah"	"49"	13851
+	"2019"	"2019"	"Vermont"	"50"	1909
+	"2019"	"2019"	"Virginia"	"51"	32843
+	"2019"	"2019"	"Washington"	"53"	28543
+	"2019"	"2019"	"West Virginia"	"54"	5811
+	"2019"	"2019"	"Wisconsin"	"55"	19167
+	"2019"	"2019"	"Wyoming"	"56"	2065
+	"2020"	"2020"	"Alabama"	"01"	18602
+	"2020"	"2020"	"Alaska"	"02"	2848
+	"2020"	"2020"	"Arizona"	"04"	24679
+	"2020"	"2020"	"Arkansas"	"05"	10944
+	"2020"	"2020"	"California"	"06"	144995
+	"2020"	"2020"	"Colorado"	"08"	22141
+	"2020"	"2020"	"Connecticut"	"09"	11918
+	"2020"	"2020"	"Delaware"	"10"	3468
+	"2020"	"2020"	"District of Columbia"	"11"	3456
+	"2020"	"2020"	"Florida"	"12"	71785
+	"2020"	"2020"	"Georgia"	"13"	41415
+	"2020"	"2020"	"Hawaii"	"15"	5407
+	"2020"	"2020"	"Idaho"	"16"	6754
+	"2020"	"2020"	"Illinois"	"17"	43046
+	"2020"	"2020"	"Indiana"	"18"	24481
+	"2020"	"2020"	"Iowa"	"19"	10870
+	"2020"	"2020"	"Kansas"	"20"	10687
+	"2020"	"2020"	"Kentucky"	"21"	16713
+	"2020"	"2020"	"Louisiana"	"22"	17562
+	"2020"	"2020"	"Maine"	"23"	4075
+	"2020"	"2020"	"Maryland"	"24"	22771
+	"2020"	"2020"	"Massachusetts"	"25"	25271
+	"2020"	"2020"	"Michigan"	"26"	33452
+	"2020"	"2020"	"Minnesota"	"27"	19418
+	"2020"	"2020"	"Mississippi"	"28"	11035
+	"2020"	"2020"	"Missouri"	"29"	21581
+	"2020"	"2020"	"Montana"	"30"	3482
+	"2020"	"2020"	"Nebraska"	"31"	6987
+	"2020"	"2020"	"Nevada"	"32"	11023
+	"2020"	"2020"	"New Hampshire"	"33"	4376
+	"2020"	"2020"	"New Jersey"	"34"	33931
+	"2020"	"2020"	"New Mexico"	"35"	7186
+	"2020"	"2020"	"New York"	"36"	72437
+	"2020"	"2020"	"North Carolina"	"37"	39569
+	"2020"	"2020"	"North Dakota"	"38"	3068
+	"2020"	"2020"	"Ohio"	"39"	41162
+	"2020"	"2020"	"Oklahoma"	"40"	14210
+	"2020"	"2020"	"Oregon"	"41"	13978
+	"2020"	"2020"	"Pennsylvania"	"42"	43025
+	"2020"	"2020"	"Rhode Island"	"44"	3677
+	"2020"	"2020"	"South Carolina"	"45"	18227
+	"2020"	"2020"	"South Dakota"	"46"	3185
+	"2020"	"2020"	"Tennessee"	"47"	26071
+	"2020"	"2020"	"Texas"	"48"	121529
+	"2020"	"2020"	"Utah"	"49"	13743
+	"2020"	"2020"	"Vermont"	"50"	1837
+	"2020"	"2020"	"Virginia"	"51"	32157
+	"2020"	"2020"	"Washington"	"53"	28155
+	"2020"	"2020"	"West Virginia"	"54"	5571
+	"2020"	"2020"	"Wisconsin"	"55"	18710
+	"2020"	"2020"	"Wyoming"	"56"	1943
+	"2021"	"2021"	"Alabama"	"01"	18794
+	"2021"	"2021"	"Alaska"	"02"	2826
+	"2021"	"2021"	"Arizona"	"04"	25083
+	"2021"	"2021"	"Arkansas"	"05"	11341
+	"2021"	"2021"	"California"	"06"	144734
+	"2021"	"2021"	"Colorado"	"08"	22622
+	"2021"	"2021"	"Connecticut"	"09"	12386
+	"2021"	"2021"	"Delaware"	"10"	3522
+	"2021"	"2021"	"District of Columbia"	"11"	3396
+	"2021"	"2021"	"Florida"	"12"	73480
+	"2021"	"2021"	"Georgia"	"13"	41325
+	"2021"	"2021"	"Hawaii"	"15"	5039
+	"2021"	"2021"	"Idaho"	"16"	6974
+	"2021"	"2021"	"Illinois"	"17"	42337
+	"2021"	"2021"	"Indiana"	"18"	24633
+	"2021"	"2021"	"Iowa"	"19"	11036
+	"2021"	"2021"	"Kansas"	"20"	10601
+	"2021"	"2021"	"Kentucky"	"21"	16314
+	"2021"	"2021"	"Louisiana"	"22"	17540
+	"2021"	"2021"	"Maine"	"23"	4164
+	"2021"	"2021"	"Maryland"	"24"	22383
+	"2021"	"2021"	"Massachusetts"	"25"	25420
+	"2021"	"2021"	"Michigan"	"26"	33011
+	"2021"	"2021"	"Minnesota"	"27"	19361
+	"2021"	"2021"	"Mississippi"	"28"	10803
+	"2021"	"2021"	"Missouri"	"29"	21284
+	"2021"	"2021"	"Montana"	"30"	3742
+	"2021"	"2021"	"Nebraska"	"31"	7135
+	"2021"	"2021"	"Nevada"	"32"	10829
+	"2021"	"2021"	"New Hampshire"	"33"	4651
+	"2021"	"2021"	"New Jersey"	"34"	34733
+	"2021"	"2021"	"New Mexico"	"35"	7073
+	"2021"	"2021"	"New York"	"36"	71516
+	"2021"	"2021"	"North Carolina"	"37"	40747
+	"2021"	"2021"	"North Dakota"	"38"	3003
+	"2021"	"2021"	"Ohio"	"39"	41007
+	"2021"	"2021"	"Oklahoma"	"40"	14808
+	"2021"	"2021"	"Oregon"	"41"	14241
+	"2021"	"2021"	"Pennsylvania"	"42"	42705
+	"2021"	"2021"	"Rhode Island"	"44"	3776
+	"2021"	"2021"	"South Carolina"	"45"	18908
+	"2021"	"2021"	"South Dakota"	"46"	3240
+	"2021"	"2021"	"Tennessee"	"47"	27385
+	"2021"	"2021"	"Texas"	"48"	122302
+	"2021"	"2021"	"Utah"	"49"	14044
+	"2021"	"2021"	"Vermont"	"50"	1934
+	"2021"	"2021"	"Virginia"	"51"	32354
+	"2021"	"2021"	"Washington"	"53"	27318
+	"2021"	"2021"	"West Virginia"	"54"	5554
+	"2021"	"2021"	"Wisconsin"	"55"	19010
+	"2021"	"2021"	"Wyoming"	"56"	1934
+"---"
+"Dataset: Natality, 2016-2021 expanded"
+"Query Parameters:"
+"Fetal Presentation: Cephalic"
+"Live Birth Order: 1"
+"OE Gestational Age Recode 11: 37-38 weeks; 39 weeks; 40 weeks; 41 weeks; 42 weeks or more"
+"Plurality: Single"
+"Group By: Year; State of Residence"
+"Show Totals: False"
+"Show Zero Values: True"
+"Show Suppressed: True"
+"Calculate Rates Per: 1,000"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/Natality-expanded.html for more information."
+"---"
+"Query Date: Mar 5, 2023 11:59:41 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
+"System, Natality on CDC WONDER Online Database. Data are from the Natality Records 2016-2021, as compiled from data provided by"
+"the 57 vital statistics jurisdictions through the Vital Statistics Cooperative Program. Accessed at"
+"http://wonder.cdc.gov/natality-expanded-current.html on Mar 5, 2023 11:59:41 PM"
+"---"
+Caveats:
+"1. Each birth record represents one liveborn infant."
