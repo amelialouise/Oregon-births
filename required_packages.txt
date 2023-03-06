@@ -2,3 +2,5 @@ here
 dplyr
 vroom
 scales
+tidyr
+purrr
