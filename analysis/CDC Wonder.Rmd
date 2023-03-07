@@ -15,7 +15,7 @@ library(tidyr)
 library(purrr)
 ```
 
-# Using CDC Wonder 
+# Using CDC Wonder
 
 Expanded Natality data (2016 - 2021)
 
@@ -33,7 +33,7 @@ This dataset is inspired by the Maternal, Infant, and Child Health objective ide
 
 -   **vertex**: not breech / head is facing in a downward position for delivery.
 
-In order to get the totals for low-risk births and low-risk cesarean births we must identify the equivalent criteria in CDC Wonder's [Natality for 2016 - 2021 (expanded)](https://wonder.cdc.gov/natality-expanded-current.html) data collection. For low-risk cesarean births, we set the following: 
+In order to get the totals for low-risk births and low-risk cesarean births we must identify the equivalent criteria in CDC Wonder's [Natality for 2016 - 2021 (expanded)](https://wonder.cdc.gov/natality-expanded-current.html) data collection. For low-risk cesarean births, we set the following:
 
 In section 1. "Organize table layout"
 
@@ -57,9 +57,9 @@ In section 12. "Select infant characteristics"
 
 -   **Plurality**: Single
 
-Use the send button to run the query in CDC Wonder. The export of this dataset is saved as the **US Natality, 2016-2021 expanded_low-risk cesarean.txt** data file in **/data/**. 
+Use the send button to run the query in CDC Wonder. The export of this dataset is saved as the **US Natality, 2016-2021 expanded_low-risk cesarean.txt** data file in **/data/**.
 
-We can use vroom to load this data in R and mutate in formatted version of the counts. 
+We can use vroom to load this data in R and mutate in formatted version of the counts.
 
 ```{r low-risk-cesareans}
 low_risk_cesarean_totals <- 
@@ -77,7 +77,7 @@ low_risk_cesarean_totals %>%
   arrange(desc(Year))
 ```
 
-These match the low-risk cesarean totals reported on page 36, Table 17 [Jan. 2023 National Vital Statistics Report](https://www.cdc.gov/nchs/data/nvsr/nvsr72/nvsr72-01.pdf). 
+These match the low-risk cesarean totals reported on page 36, Table 17 [Jan. 2023 National Vital Statistics Report](https://www.cdc.gov/nchs/data/nvsr/nvsr72/nvsr72-01.pdf).
 
 Next, we'll get total low-risk births so that we can calculate the proportion of low-risk cesareans among these. Note that these totals are not provided in the report linked above but they are the denominator used in the low-risk cesarean rates calculation as stated in footnote 6 of Table 17.
 
@@ -105,7 +105,7 @@ In section 12. "Select infant characteristics"
 
 -   **Plurality**: Single
 
-The export of this dataset is the **US Natality, 2016-2021 expanded_low-risk births.txt** data file stored in **/data/**. The total counts are displayed by year below. 
+The export of this dataset is the **US Natality, 2016-2021 expanded_low-risk births.txt** data file stored in **/data/**. The total counts are displayed by year below.
 
 ```{r low-risk-all-deliveries}
 low_risk_all_deliveries_totals <- 
@@ -151,7 +151,6 @@ This processed dataframe is saved as a csv in **/publish/** and RDS in **/save/*
 saveRDS(df_low_risk_births, here("save","US_low_risk_births_2016_to_2021.RDS"))
 write.csv(df_low_risk_births, here("publish", "US_low_risk_births_2016_to_2021.csv"), row.names = FALSE)
 ```
-
 
 For the latest rates as of 2023, visit the [NCHS - VSRR Quarterly provisional estimates for selected birth indicators](https://data.cdc.gov/d/76vv-a7x8) dataset on Socrata. This does not include totals but has cesarean and low-risk cesarean birth rates at the national level by race/ethnicity.
 
@@ -205,11 +204,16 @@ saveRDS(df_low_risk_births_by_state, here("save","state_low_risk_births_2016_to_
 write.csv(df_low_risk_births_by_state, here("publish", "state_low_risk_births_2016_to_2021.csv"), row.names = FALSE)
 ```
 
-# Using CDC Wonder API
+# Other data sources
 
-CDC does offer an API for the CDC Wonder dataset: 
+CDC offers an API for US-level data from CDC Wonder:
 
-https://wonder.cdc.gov/wonder/help/WONDER-API.html
+<https://wonder.cdc.gov/wonder/help/WONDER-API.html>
 
-There is also an R package here: 
-https://github.com/socdataR/wonderapi
+We did not use this service for this project since the API is not setup to provide state-level data (or any granular geographic data). However, we did learn about the [wonderapi R package](https://github.com/socdataR/wonderapi) for querying the CDC Wonder API using R. At the time of this write-up (3/6/2023) the wonderapi package had a [branch](https://github.com/socdataR/wonderapi/tree/addD149) for adding support to query CDC's Expanded Natality dataset.
+
+Additional sources for CDC vital statistics data include:
+
+-   [CDC's Downloadable Files](https://www.cdc.gov/nchs/data_access/vitalstatsonline.htm#Downloadable)
+
+-   [National Bureau of Economic Research's Public Use Data Archive](https://www.nber.org/research/data?page=1&perPage=50) - [Vital Statistics Data](https://www.nber.org/research/data?facet=datasetCat%3AVital%20Statistics&page=1&perPage=50)
