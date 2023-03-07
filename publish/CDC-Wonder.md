@@ -3,7 +3,8 @@ Extracting CDC Data
 
 This notebook documents our process for extracting natality data from
 <a href="https://wonder.cdc.gov/natality.html" class="uri">CDC
-Wonder</a> and [data.cdc.gov](https://data.cdc.gov/).
+Wonder</a> web application and other sources, such as
+[data.cdc.gov](https://data.cdc.gov/).
 
 All raw, downloaded CDC data are stored in this project’s **/data/**
 folder.
@@ -16,7 +17,7 @@ library(tidyr)
 library(purrr)
 ```
 
-# Using CDC Wonder
+# CDC Wonder (Web App)
 
 Expanded Natality data (2016 - 2021)
 
@@ -296,10 +297,27 @@ saveRDS(df_low_risk_births_by_state, here("save","state_low_risk_births_2016_to_
 write.csv(df_low_risk_births_by_state, here("publish", "state_low_risk_births_2016_to_2021.csv"), row.names = FALSE)
 ```
 
-# Using CDC Wonder API
+# Other data sources
 
-CDC does offer an API for the CDC Wonder dataset:
+CDC offers an API for US-level data from CDC Wonder:
 
 <https://wonder.cdc.gov/wonder/help/WONDER-API.html>
 
-There is also an R package here: <https://github.com/socdataR/wonderapi>
+We did not use this service for this project since the API is not setup
+to provide state-level data (or any granular geographic data). However,
+we did learn about the [wonderapi R
+package](https://github.com/socdataR/wonderapi) for querying the CDC
+Wonder API using R. At the time of this write-up (3/6/2023) the
+wonderapi package had a
+[branch](https://github.com/socdataR/wonderapi/tree/addD149) for adding
+support to query CDC’s Expanded Natality dataset.
+
+Additional sources for CDC vital statistics data include:
+
+- [CDC’s Downloadable
+  Files](https://www.cdc.gov/nchs/data_access/vitalstatsonline.htm#Downloadable)
+
+- [National Bureau of Economic Research’s Public Use Data
+  Archive](https://www.nber.org/research/data?page=1&perPage=50) -
+  [Vital Statistics
+  Data](https://www.nber.org/research/data?facet=datasetCat%3AVital%20Statistics&page=1&perPage=50)

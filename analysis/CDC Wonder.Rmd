@@ -3,7 +3,7 @@ title: "Extracting CDC Data"
 output: github_document
 ---
 
-This notebook documents our process for extracting natality data from [CDC Wonder](https://wonder.cdc.gov/natality.html){.uri} and [data.cdc.gov](https://data.cdc.gov/).
+This notebook documents our process for extracting natality data from [CDC Wonder](https://wonder.cdc.gov/natality.html){.uri} web application and other sources, such as [data.cdc.gov](https://data.cdc.gov/).
 
 All raw, downloaded CDC data are stored in this project's **/data/** folder.
 
@@ -15,7 +15,7 @@ library(tidyr)
 library(purrr)
 ```
 
-# Using CDC Wonder
+# CDC Wonder (Web App)
 
 Expanded Natality data (2016 - 2021)
 
